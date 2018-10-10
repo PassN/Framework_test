@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char HipoPayFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HipoPayFramework/PublicHeader.h>
 
-#import <HipoPayFramework/SayHello.h>
+#import <HipoPayFramework/HipoPay.h>
 //#import <AFNetworking/AFNetworking.h>
