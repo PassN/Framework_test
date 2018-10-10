@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.0.4'
-s.summary                    = '新增微信appid注册'
+s.version                    = '1.0.5'
+s.summary                    = '最低支持版本变为iOS8.0'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
 s.author                     = { 'Jonzzs' => '734606521@qq.com' }

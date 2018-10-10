@@ -20,7 +20,17 @@
  *sign
  */
 + (void)HP_wechatpay_insideAppid:(NSString *)WX_APPID withInfoDic:(NSDictionary *)infoDic;
-
+/*微信境外支付
+ *WX_APPID在微信注册的APPid(境外)
+ *merchant_no
+ *amount
+ *currency
+ *subject
+ *notify_url
+ *out_order_no
+ *block返回网络错误之类的错误
+ */
++ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withNotify_url:(NSString *)notify_url withOut_order_no:(NSString *)out_order_no withBlock:(void(^)(NSError *error))block;
 
 
 
