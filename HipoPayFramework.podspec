@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.0.3'
-s.summary                    = 'Test for HipoPayFramework.'
+s.version                    = '1.0.4'
+s.summary                    = '新增微信appid注册'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
 s.author                     = { 'Jonzzs' => '734606521@qq.com' }
 # s.social_media_url           = 'http://weibo.com/Sdashu'
 s.platform                   = :ios
-s.ios.deployment_target      = '9.0'
+s.ios.deployment_target      = '8.0'
 # s.swift_version              = '4.0'
 s.source                     = { :git => 'https://github.com/PassN/Framework_test.git', :tag => s.version }
 # s.source_files               = 'HipoPayFramework/*.{h,m}'

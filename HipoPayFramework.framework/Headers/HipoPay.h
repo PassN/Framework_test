@@ -21,4 +21,8 @@
  */
 + (void)HP_wechatpay_insideAppid:(NSString *)WX_APPID withInfoDic:(NSDictionary *)infoDic;
 
+
+
+
+
 @end
