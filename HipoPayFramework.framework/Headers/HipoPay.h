@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HipoPay : NSObject
-/*infoDic需要包含下面的参数
+/*微信境内支付
+ *WX_APPID在微信注册的APPid
+ *infoDic需要包含下面的参数:
  *partnerId
  *prepayId
  *nonceStr
@@ -17,6 +19,6 @@
  *packageValue
  *sign
  */
-+ (void)HP_wechatpay_inside:(NSDictionary *)infoDic;
++ (void)HP_wechatpay_insideAppid:(NSString *)WX_APPID withInfoDic:(NSDictionary *)infoDic;
 
 @end
