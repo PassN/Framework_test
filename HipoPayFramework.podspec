@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.0.1'
+s.version                    = '1.0.2'
 s.summary                    = 'Test for HipoPayFramework.'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
@@ -15,7 +15,8 @@ s.source                     = { :git => 'https://github.com/PassN/Framework_tes
 # s.resource                   = 'xxx/xxx.bundle'
 s.ios.vendored_frameworks    = 'HipoPayFramework.framework'
 s.frameworks                 = 'UIKit'
-s.dependency 'AFNetworking', '~> 2.6.1'
+s.dependency 'AFNetworking'
+s.dependency 'WechatOpenSDK'
 # s.subspec 'GroupName' do |s|
 # ...
 end
