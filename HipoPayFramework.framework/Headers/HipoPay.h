@@ -43,7 +43,7 @@
  *packageValue
  *sign
  */
-+ (void)HP_alipay_insideAppid:(NSString *)WX_APPID withInfoDic:(NSDictionary *)infoDic;
++ (void)HP_alipay_insideAppid:(NSString *)WX_APPID withAppScheme:(NSString *)appScheme withPrepay_string:(NSString *)prepay_string;
 
 + (void)HP_alipay_outsideAppid:(NSString *)ALI_APPID withAppScheme:(NSString *)appScheme withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)product_info withBlock:(void(^)(NSError *error))block;
 
