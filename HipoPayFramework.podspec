@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.0.5'
-s.summary                    = '最低支持版本变为iOS8.0'
+s.version                    = '1.0.6'
+s.summary                    = '添加微信境外支付'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
-s.author                     = { 'Jonzzs' => '734606521@qq.com' }
+s.author                     = { 'Sdashu' => '734606521@qq.com' }
 # s.social_media_url           = 'http://weibo.com/Sdashu'
 s.platform                   = :ios
 s.ios.deployment_target      = '8.0'
