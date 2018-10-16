@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.1.3'
+s.version                    = '1.1.4'
 s.summary                    = '添加支付宝境外支付'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
@@ -18,6 +18,7 @@ s.frameworks                 = 'UIKit'
 # , 'CoreMotion', 'Foundation', 'CoreGraphics', 'CoreText', 'QuartzCore', 'AlipaySDK'
 s.dependency 'AFNetworking'
 s.dependency 'WechatOpenSDK'
+s.dependency 'AlipaySDK-iOS'
 # s.subspec 'GroupName' do |s2
 # ...
 end

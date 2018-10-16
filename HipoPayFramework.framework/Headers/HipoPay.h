@@ -34,17 +34,24 @@
 
 
 /*支付宝境内支付
- *WX_APPID在微信注册的APPid
- *infoDic需要包含下面的参数:
- *partnerId
- *prepayId
- *nonceStr
- *timeStamp
- *packageValue
- *sign
+ *ALI_APPID在支付宝注册的APPid
+ *appScheme在URLType中注册的URLScheme
+ *prepay_string
+ *callbackBlock支付宝返回
  */
-+ (void)HP_alipay_insideAppid:(NSString *)WX_APPID withAppScheme:(NSString *)appScheme withPrepay_string:(NSString *)prepay_string;
++ (void)HP_alipay_insideAppid:(NSString *)ALI_APPID withAppScheme:(NSString *)appScheme withPrepay_string:(NSString *)prepay_string withCallback:(void(^)(NSDictionary *resultDic))callbackBlock;
 
-+ (void)HP_alipay_outsideAppid:(NSString *)ALI_APPID withAppScheme:(NSString *)appScheme withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)product_info withBlock:(void(^)(NSError *error))block;
+/*支付宝境外支付
+ *ALI_APPID在支付宝注册的APPid
+ *appScheme在URLType中注册的URLScheme
+ *merchant_no
+ *amount
+ *currency
+ *subject
+ *product_info
+ *callbackBlock支付宝返回
+ *errorBlock
+ */
++ (void)HP_alipay_outsideAppid:(NSString *)ALI_APPID withAppScheme:(NSString *)appScheme withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)product_info withCallback:(void(^)(NSDictionary *resultDic))callbackBlock withBlock:(void(^)(NSError *error))errorBlock;
 
 @end
