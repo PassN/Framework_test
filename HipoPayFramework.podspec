@@ -10,11 +10,12 @@ s.platform                   = :ios
 s.ios.deployment_target      = '8.0'
 # s.swift_version              = '4.0'
 s.source                     = { :git => 'https://github.com/PassN/Framework_test.git', :tag => s.version }
-# s.source_files               = 'HipoPayFramework/*.{h,m}'
+s.source_files               = 'HipoPayFramework/*.{h,m}'
 # s.resource_bundle            = { 'Framework_test/HipoPayFramework' => ['Resources/**/*.xcassets'] }
-# s.resource                   = 'xxx/xxx.bundle'
+# s.resource                   = 'HipoPayFramework/AlipaySDK.bundle'
 s.ios.vendored_frameworks    = 'HipoPayFramework.framework'
-s.frameworks                 = 'UIKit', 'CoreMotion', 'Foundation', 'CoreGraphics', 'CoreText', 'QuartzCore', 'AlipaySDK'
+s.frameworks                 = 'UIKit'
+# , 'CoreMotion', 'Foundation', 'CoreGraphics', 'CoreText', 'QuartzCore', 'AlipaySDK'
 s.dependency 'AFNetworking'
 s.dependency 'WechatOpenSDK'
 # s.subspec 'GroupName' do |s|
