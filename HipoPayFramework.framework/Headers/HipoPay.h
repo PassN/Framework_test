@@ -45,10 +45,10 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  *callbackBlock(支付结果)
  *errorBlock(网络错误，SDK调起失败)
  */
-+ (void)HPStatus:(HipoPayStatus)status
+- (void)HPStatus:(HipoPayStatus)status
    withAppScheme:(NSString *)appScheme
    withWXInfoDic:(NSDictionary *)WXinfoDic
-    withAliOrderStr:(NSString *)orderStr
+ withAliOrderStr:(NSString *)orderStr
     withCallback:(CallbackBlock)callbackBlock
        withBlock:(HipoPayErrorBlock)errorBlock;
 
