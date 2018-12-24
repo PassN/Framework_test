@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name                       = 'HipoPayFramework'
-s.version                    = '1.1.14'
+s.version                    = '1.1.15'
 s.summary                    = '添加返回'
 s.homepage                   = 'https://github.com/PassN/Framework_test.git'
 s.license                    = { :type => 'MIT', :file => 'LICENSE' }
@@ -14,11 +14,11 @@ s.source                     = { :git => 'https://github.com/PassN/Framework_tes
 # s.resource_bundle            = { 'Framework_test/HipoPayFramework' => ['Resources/**/*.xcassets'] }
 # s.resource                   = 'HipoPayFramework/AlipaySDK.bundle'
 s.ios.vendored_frameworks    = 'HipoPayFramework.framework'
-s.frameworks                 = 'UIKit'
+s.frameworks                 = "Foundation", "UIKit"
 # , 'CoreMotion', 'Foundation', 'CoreGraphics', 'CoreText', 'QuartzCore', 'AlipaySDK'
-# s.dependency 'XMNetworking'
-# s.dependency 'WechatOpenSDK'
-# s.dependency 'AlipaySDK-iOS'
+s.dependency 'XMNetworking'
+s.dependency 'WechatOpenSDK'
+s.dependency 'AlipaySDK-iOS'
 # s.subspec 'GroupName' do |s2
 # ...
 end
