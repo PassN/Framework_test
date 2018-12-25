@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HipoPayFramework"
-  s.version      = "1.1.23"
+  s.version      = "1.1.24"
   s.summary      = "重新生成podspec"
   s.homepage        = "https://github.com/PassN/Framework_test.git"
   s.license         = { :type => 'MIT', :file => 'LICENSE' }
