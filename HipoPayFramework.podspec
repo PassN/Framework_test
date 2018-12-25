@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HipoPayFramework"
-  s.version      = "1.1.21"
+  s.version      = "1.1.22"
   s.summary      = "重新生成podspec"
   s.homepage        = "https://github.com/PassN/Framework_test.git"
   s.license         = { :type => 'MIT', :file => 'LICENSE' }
   s.author          = { 'Sdashu' => '734606521@qq.com' }
   s.platform        = :ios, "9.0"
   s.source          = { :git => "https://github.com/PassN/Framework_test.git", :tag => s.version }
-  s.source_files    = "HipoPayFramework", "HipoPayFramework/**/*.{h,m}"
+  # s.source_files    = "HipoPayFramework", "HipoPayFramework/**/*.{h,m}"
   s.framework       = "UIKit"
   s.dependency 'XMNetworking'
   s.dependency 'WechatOpenSDK'
