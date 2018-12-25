@@ -1,0 +1,6 @@
+framework module HipoPayFramework {
+  umbrella header "HipoPayFramework.h"
+
+  export *
+  module * { export * }
+}
