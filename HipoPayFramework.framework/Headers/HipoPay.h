@@ -24,22 +24,10 @@ typedef NS_ENUM(NSInteger, HipoPayError){
     HipoPayErrorSuccess   = 0,   /** 支付成功    */
 };
 
-@protocol HipoPayDelegate <NSObject>
-
-- (void)hipoPayBackAlipay:(NSDictionary *)resultDic;
-- (void)hipoPayBackWeChat:(NSDictionary *)resultDic;
-
-@end
-
 typedef void(^CallbackBlock)(NSDictionary *resultDic);//成功返回block
 typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
 
 @interface HipoPay : NSObject
-
-@property (nonatomic, weak) id<HipoPayDelegate> delegate; //声明协议变量
-
-
-
 
 
 /*微信境内支付
@@ -130,28 +118,6 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
                    withSubject:(NSString *)subject
               withProduct_info:(NSString *)product_info
                   withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
-                     withBlock:(void(^)(HipoPayError error))errorBlock;
-
-
-/*支付宝境外支付
- *ALI_APPID在支付宝注册的APPid
- *appScheme在URLType中注册的URLScheme
- *merchant_no
- *amount
- *currency
- *subject
- *product_info
- *callbackBlock支付宝返回
- *errorBlock
- */
-- (instancetype)initWihtHP_alipay_outsideAppid:(NSString *)ALI_APPID
-                         withAppScheme:(NSString *)appScheme
-                       withMerchant_no:(NSString *)merchant_no
-                            withAmount:(NSString *)amount
-                          withCurrency:(NSString *)currency
-                           withSubject:(NSString *)subject
-                      withProduct_info:(NSString *)product_info
-                          withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
                      withBlock:(void(^)(HipoPayError error))errorBlock;
 
 + (BOOL)ResponseToPaymentResultsWithUrl:(NSURL *)url;
