@@ -8,14 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, HipoPayStatus){
-    HipoPayStatusWXInside      = 1,   /** 微信境内支付    */
-    HipoPayStatusWXOutside     = 2,   /** 微信境外支付    */
-    HipoPayStatusALIInside     = 3,   /** 支付宝境内支付  */
-    HipoPayStatusALIOutside    = 4,   /** 支付宝境外支付  */
-    HipoPayStatusOther         = 0,   /** 其他为后期准备  */
-};
-
 typedef NS_ENUM(NSInteger, HipoPayError){
     HipoPayErrorNetFault  = 1,   /** 网络故障    */
     HipoPayErrorCancel    = 2,   /** 用户取消    */
@@ -24,33 +16,10 @@ typedef NS_ENUM(NSInteger, HipoPayError){
     HipoPayErrorSuccess   = 0,   /** 支付成功    */
 };
 
-typedef void(^CallbackBlock)(NSDictionary *resultDic);//成功返回block
-typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
+//结果与信息
+typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
 
 @interface HipoPay : NSObject
-
-
-/*微信境内支付
- *status
- *appid
- *appScheme
- *infoDic需要包含下面的参数:
- *partnerId
- *prepayId
- *nonceStr
- *timeStamp
- *packageValue
- *sign
- *orderStr (仅支持接收调取支付宝支付的orderStr)
- *callbackBlock(支付结果)
- *errorBlock(网络错误，SDK调起失败)
- */
-- (void)HPStatus:(HipoPayStatus)status
-   withAppScheme:(NSString *)appScheme
-   withWXInfoDic:(NSDictionary *)WXinfoDic
- withAliOrderStr:(NSString *)orderStr
-    withCallback:(CallbackBlock)callbackBlock
-       withBlock:(HipoPayErrorBlock)errorBlock;
 
 /*微信境内支付
  *WX_APPID在微信注册的APPid
@@ -64,8 +33,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  */
 + (void)HP_wechatpay_insideAppid:(NSString *)WX_APPID
                      withInfoDic:(NSDictionary *)infoDic
-                    withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
-                       withBlock:(void(^)(HipoPayError error))errorBlock;
+                    withCallback:(CallbackBlock)callbackBlock;
 
 /*微信境外支付
  *WX_APPID在微信注册的APPid(境外)
@@ -77,7 +45,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  *out_order_no
  *block返回网络错误之类的错误
  */
-+ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)withProduct_info                     withCallback:(void(^)(NSDictionary *resultDic))callbackBlock withBlock:(void(^)(HipoPayError error))block;
++ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)withProduct_info                     withCallback:(CallbackBlock)callbackBlock;
 
 
 /*支付宝境内支付
@@ -86,8 +54,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  */
 + (void)HP_alipay_insideAppScheme:(NSString *)appScheme
         withOrderStr:(NSString *)orderStr
-        withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
-           withBlock:(void(^)(HipoPayError error))errorBlock;
+        withCallback:(CallbackBlock)callbackBlock;
 
 /*支付宝境外支付
  *appScheme在URLType中注册的URLScheme
@@ -95,8 +62,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  */
 + (void)HP_alipay_outsideAppScheme:(NSString *)appScheme
         withOrderStr:(NSString *)orderStr
-        withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
-           withBlock:(void(^)(HipoPayError error))errorBlock;
+        withCallback:(CallbackBlock)callbackBlock;
 
 
 /*支付宝境外支付
@@ -117,8 +83,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
                   withCurrency:(NSString *)currency
                    withSubject:(NSString *)subject
               withProduct_info:(NSString *)product_info
-                  withCallback:(void(^)(NSDictionary *resultDic))callbackBlock
-                     withBlock:(void(^)(HipoPayError error))errorBlock;
+                  withCallback:(CallbackBlock)callbackBlock;
 
 + (BOOL)ResponseToPaymentResultsWithUrl:(NSURL *)url;
 
