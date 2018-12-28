@@ -77,7 +77,7 @@ typedef void(^HipoPayErrorBlock)(HipoPayError error);//失败返回block
  *out_order_no
  *block返回网络错误之类的错误
  */
-+ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)withProduct_info withBlock:(void(^)(HipoPayError error))block;
++ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)withProduct_info                     withCallback:(void(^)(NSDictionary *resultDic))callbackBlock withBlock:(void(^)(HipoPayError error))block;
 
 
 /*支付宝境内支付
