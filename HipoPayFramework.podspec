@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                       = 'HipoPayFramework'
-  s.version                    = '1.2.10'
+  s.version                    = '1.2.11'
   s.summary                    = '添加支付宝微信Block返回'
   s.homepage                   = 'https://github.com/PassN/Framework_test.git'
   s.license                    = { :type => 'MIT', :file => 'LICENSE' }
