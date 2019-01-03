@@ -36,16 +36,37 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
                     withCallback:(CallbackBlock)callbackBlock;
 
 /*微信境外支付
+ *WX_APPID在微信注册的APPid
+ *infoDic需要包含下面的参数:
+ *partnerId
+ *prepayId
+ *nonceStr
+ *timeStamp
+ *packageValue
+ *sign
+ */
++ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID
+                      withInfoDic:(NSDictionary *)infoDic
+                     withCallback:(CallbackBlock)callbackBlock;
+/*微信境外支付
  *WX_APPID在微信注册的APPid(境外)
  *merchant_no
  *amount
  *currency
  *subject
  *notify_url
- *out_order_no
+ *wechat_order_no
  *block返回网络错误之类的错误
  */
-+ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID withMerchant_no:(NSString *)merchant_no withAmount:(NSString *)amount withCurrency:(NSString *)currency withSubject:(NSString *)subject withProduct_info:(NSString *)withProduct_info                     withCallback:(CallbackBlock)callbackBlock;
++ (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID
+                  withMerchant_no:(NSString *)merchant_no
+                       withAmount:(NSString *)amount
+                     withCurrency:(NSString *)currency
+                      withSubject:(NSString *)subject
+                 withProduct_info:(NSString *)withProduct_info
+                   withNotify_url:(NSString *)notify_url
+              withWeChat_order_no:(NSString *)wechat_order_no
+                     withCallback:(CallbackBlock)callbackBlock;
 
 
 /*支付宝境内支付
@@ -73,6 +94,8 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
  *currency
  *subject
  *product_info
+ *notify_url
+ *alipay_order_no
  *callbackBlock支付宝返回
  *errorBlock
  */
@@ -83,6 +106,8 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
                   withCurrency:(NSString *)currency
                    withSubject:(NSString *)subject
               withProduct_info:(NSString *)product_info
+                withNotify_url:(NSString *)notify_url
+           withAlipay_order_no:(NSString *)alipay_order_no
                   withCallback:(CallbackBlock)callbackBlock;
 
 + (BOOL)ResponseToPaymentResultsWithUrl:(NSURL *)url;
