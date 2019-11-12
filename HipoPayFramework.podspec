@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                       = 'HipoPayFramework'
-  s.version                    = '1.2.14'
-  s.summary                    = '添加支付宝微信唯一标识符'
+  s.version                    = '1.2.15'
+  s.summary                    = '修改微信注册时的:registerApp:universalLink'
   s.homepage                   = 'https://github.com/PassN/Framework_test.git'
   s.license                    = { :type => 'MIT', :file => 'LICENSE' }
   s.author                     = { 'Sdashu' => '734606521@qq.com' }

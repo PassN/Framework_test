@@ -32,6 +32,7 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
  *sign
  */
 + (void)HP_wechatpay_insideAppid:(NSString *)WX_APPID
+               withUniversalLink:(NSString *)universalLink
                      withInfoDic:(NSDictionary *)infoDic
                     withCallback:(CallbackBlock)callbackBlock;
 
@@ -46,6 +47,7 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
  *sign
  */
 + (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID
+                withUniversalLink:(NSString *)universalLink
                       withInfoDic:(NSDictionary *)infoDic
                      withCallback:(CallbackBlock)callbackBlock;
 /*微信境外支付
@@ -59,6 +61,7 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
  *block返回网络错误之类的错误
  */
 + (void)HP_wechatpay_outsideAppid:(NSString *)WX_APPID
+                withUniversalLink:(NSString *)universalLink
                   withMerchant_no:(NSString *)merchant_no
                        withAmount:(NSString *)amount
                      withCurrency:(NSString *)currency
