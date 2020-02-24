@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                       = 'HipoPayFramework'
-  s.version                    = '1.3.1'
-  s.summary                    = '修改微信注册时的:registerApp:universalLink'
+  s.version                    = '1.3.2'
+  s.summary                    = '添加云闪付APP支付'
   s.homepage                   = 'https://github.com/PassN/Framework_test.git'
   s.license                    = { :type => 'MIT', :file => 'LICENSE' }
   s.author                     = { 'Sdashu' => '734606521@qq.com' }
@@ -14,7 +14,8 @@ Pod::Spec.new do |s|
   # s.resource_bundle            = { 'Framework_test/HipoPayFramework' => ['Resources/**/*.xcassets'] }
   # s.resource                   = 'HipoPayFramework/AlipaySDK.bundle'
   s.ios.vendored_frameworks    = 'HipoPayFramework.framework'
-  s.frameworks                 = "Foundation", "UIKit"
+  s.frameworks                 = "Foundation", "UIKit", "CFNetwork", "CoreMedia", "CoreTelephony", "CoreVideo", "QuartzCore", "Security", "StoreKit", "SystemConfiguration"
+  s.libraries                  = "z.tbd", "sqlite3.tbd", "iconv.tbd", "c++.tbd"
   # , 'CoreMotion', 'Foundation', 'CoreGraphics', 'CoreText', 'QuartzCore', 'AlipaySDK'
   s.dependency 'XMNetworking'
   s.dependency 'WechatOpenSDK'

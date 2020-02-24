@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, HipoPayError){
     HipoPayErrorNetFault  = 1,   /** 网络故障    */
@@ -112,6 +113,18 @@ typedef void(^CallbackBlock)(NSDictionary *resultDic, HipoPayError code);
                 withNotify_url:(NSString *)notify_url
            withAlipay_order_no:(NSString *)alipay_order_no
                   withCallback:(CallbackBlock)callbackBlock;
+
+/*云闪付境外支付
+ *appScheme在URLType中注册的URLScheme
+ *orderStr (仅支持接收调取支付宝的orderStr)
+ */
++ (void)HP_leoupop_outsideAppScheme:(NSString *)appScheme
+                      withToken_id:(NSString *)token_id
+                   withMerchant_no:(NSString *)merchant_no
+                   withTerminal_no:(NSString *)terminal_no
+             withChild_merchant_no:(NSString *)child_merchant_no
+                withViewController:(UIViewController *)viewController
+withCallback:(CallbackBlock)callbackBlock;
 
 + (BOOL)ResponseToPaymentResultsWithUrl:(NSURL *)url;
 
