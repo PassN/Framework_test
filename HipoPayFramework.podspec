@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                       = 'HipoPayFramework'
-  s.version                    = '1.4.2'
+  s.version                    = '1.4.3'
   s.summary                    = '1、适配AFNetworking4.0； 2、删除XM网络请求'
   s.homepage                   = 'https://github.com/PassN/Framework_test.git'
   s.license                    = { :type => 'MIT', :file => 'LICENSE' }
